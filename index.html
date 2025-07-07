@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gate Access</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ff0000;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px red;
+}
+
+.case-input {
+  margin: 10px 0;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  background-color: #111;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  padding: 5px;
+  width: 260px;
+  text-align: center;
+}
+
+#unlockBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#unlockBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+  </style>
+</head>
+<body oncontextmenu="return false">  <h1>FINAL ACCESS REQUIRED</h1>  <div class="case-input">
+    <label>Lead Masks</label>
+    <input type="text" id="input1">
+  </div>
+  <div class="case-input">
+    <label>Isdal Woman</label>
+    <input type="text" id="input2">
+  </div>
+  <div class="case-input">
+    <label>Hinterkaifeck</label>
+    <input type="text" id="input3">
+  </div>
+  <div class="case-input">
+    <label>Black Dahlia</label>
+    <input type="text" id="input4">
+  </div><button id="unlockBtn" disabled>UNLOCK</button>
+
+  <script>
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const input3 = document.getElementById("input3");
+    const input4 = document.getElementById("input4");
+    const button = document.getElementById("unlockBtn");
+
+    const answers = [
+      "1630capsulemasksignal",
+      "isdalvalleyburnedidentity",
+      "pickaxestablefootsteps",
+      "dahliaincisionemptysmile"
+    ];
+
+    function checkInputs() {
+      const values = [
+        input1.value.toLowerCase().trim(),
+        input2.value.toLowerCase().trim(),
+        input3.value.toLowerCase().trim(),
+        input4.value.toLowerCase().trim()
+      ];
+
+      const allCorrect = values.every((val, i) => val === answers[i]);
+      button.disabled = !allCorrect;
+    }
+
+    input1.addEventListener("input", checkInputs);
+    input2.addEventListener("input", checkInputs);
+    input3.addEventListener("input", checkInputs);
+    input4.addEventListener("input", checkInputs);
+
+    button.addEventListener("click", () => {
+      window.location.href = "https://youtube.com/YOUR_FINAL_VIDEO"; // replace with your final unlisted video link
+    });
+  </script></body>
+</html>
